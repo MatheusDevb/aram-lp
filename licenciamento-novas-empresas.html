@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Licenciamento Ambiental Completo para Novas Empresas. Abra seu negócio com segurança e conformidade. Consultoria Aram Ambiental."
+    />
+    <title>Licenciamento para Novas Empresas | Aram Ambiental</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-color: #9b59b6;
+        --primary-dark: #8e44ad;
+        --secondary-color: #34495e;
+        --accent-color: #e74c3c;
+        --text-dark: #2c3e50;
+        --text-light: #7f8c8d;
+        --bg-light: #ecf0f1;
+        --white: #ffffff;
+        --success: #27ae60;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--text-dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* Header */
+      .header {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--primary-dark) 100%
+        );
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--white);
+        text-decoration: none;
+      }
+
+      .header-cta {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .phone-link {
+        color: var(--white);
+        text-decoration: none;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(
+            135deg,
+            rgba(155, 89, 182, 0.95) 0%,
+            rgba(142, 68, 173, 0.95) 100%
+          ),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%2334495e" width="1200" height="600"/></svg>');
+        background-size: cover;
+        background-position: center;
+        color: var(--white);
+        padding: 8rem 2rem 6rem;
+        margin-top: 4rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></svg>');
+        opacity: 0.3;
+      }
+
+      .hero-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-text h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      .hero-text .subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        opacity: 0.95;
+        animation: fadeInUp 0.8s ease-out 0.2s backwards;
+      }
+
+      .startup-badge {
+        display: inline-block;
+        background: var(--success);
+        color: var(--white);
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        animation: pulse 2s infinite;
+      }
+
+      .hero-features {
+        list-style: none;
+        margin: 2rem 0;
+        animation: fadeInUp 0.8s ease-out 0.4s backwards;
+      }
+
+      .hero-features li {
+        padding: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 1.1rem;
+      }
+
+      .hero-features li::before {
+        content: "✓";
+        background: var(--white);
+        color: var(--primary-color);
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        flex-shrink: 0;
+      }
+
+      /* Form Card */
+      .form-card {
+        background: var(--white);
+        padding: 2.5rem;
+        border-radius: 15px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        animation: fadeInRight 0.8s ease-out 0.3s backwards;
+      }
+
+      .form-card h2 {
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+      }
+
+      .form-card p {
+        color: var(--text-light);
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--text-dark);
+        font-weight: 600;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.875rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: all 0.3s;
+        font-family: inherit;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.1);
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background: var(--primary-color);
+        color: var(--white);
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: all 0.3s;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      .btn:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(155, 89, 182, 0.3);
+      }
+
+      .btn-secondary {
+        background: var(--accent-color);
+      }
+
+      .btn-secondary:hover {
+        background: #c0392b;
+      }
+
+      /* Trust Indicators */
+      .trust-indicators {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        color: var(--text-light);
+        flex-wrap: wrap;
+      }
+
+      .trust-indicator {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      /* Benefits Section */
+      .benefits {
+        padding: 5rem 2rem;
+        background: var(--white);
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--text-dark);
+      }
+
+      .section-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        color: var(--text-light);
+        margin-bottom: 3rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .benefits-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .benefit-card {
+        background: var(--bg-light);
+        padding: 2rem;
+        border-radius: 12px;
+        transition: all 0.3s;
+        border: 2px solid transparent;
+      }
+
+      .benefit-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border-color: var(--primary-color);
+      }
+
+      .benefit-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--primary-color);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--white);
+      }
+
+      .benefit-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+        color: var(--text-dark);
+      }
+
+      .benefit-card p {
+        color: var(--text-light);
+        line-height: 1.6;
+      }
+
+      /* Process Section */
+      .process {
+        padding: 5rem 2rem;
+        background: var(--bg-light);
+      }
+
+      .process-steps {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: grid;
+        gap: 2rem;
+      }
+
+      .step {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: 12px;
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 2rem;
+        align-items: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s;
+      }
+
+      .step:hover {
+        transform: translateX(10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .step-number {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--primary-dark)
+        );
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--white);
+      }
+
+      .step-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-dark);
+      }
+
+      .step-content p {
+        color: var(--text-light);
+      }
+
+      /* CTA Section */
+      .cta-section {
+        padding: 5rem 2rem;
+        background: linear-gradient(
+          135deg,
+          var(--secondary-color) 0%,
+          #2c3e50 100%
+        );
+        color: var(--white);
+        text-align: center;
+      }
+
+      .cta-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .cta-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .cta-section p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .whatsapp-btn {
+        background: #25d366;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .whatsapp-btn:hover {
+        background: #20ba5a;
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--text-dark);
+        color: var(--white);
+        padding: 3rem 2rem 1.5rem;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-section h3 {
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+      }
+
+      .footer-section p,
+      .footer-section a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-section a:hover {
+        color: var(--primary-color);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero-content {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-text h1 {
+          font-size: 2rem;
+        }
+
+        .hero-text .subtitle {
+          font-size: 1.1rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .step {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .step-number {
+          margin: 0 auto;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+        }
+
+        .phone-link {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <a href="https://www.aramambiental.com.br" class="logo"
+          >🌿 Aram Ambiental</a
+        >
+        <div class="header-cta">
+          <a href="tel:+551631850604" class="phone-link"> 📞 (16) 3185-0604 </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="startup-badge">🚀 Comece do Jeito Certo</div>
+          <h1>Licenciamento Ambiental para Novas Empresas</h1>
+          <p class="subtitle">
+            Abra sua empresa com segurança e conformidade. Licenciamento
+            ambiental completo do zero à operação.
+          </p>
+
+          <ul class="hero-features">
+            <li>Processo completo: LP, LI e LO</li>
+            <li>Evite problemas futuros com fiscalização</li>
+            <li>Assessoria desde o planejamento</li>
+            <li>Para indústrias, comércios e serviços</li>
+          </ul>
+        </div>
+
+        <div class="form-card">
+          <h2>Solicite seu Orçamento Gratuito</h2>
+          <p>
+            Preencha o formulário e receba uma proposta personalizada em até 24
+            horas.
+          </p>
+
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Nome Completo *</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Empresa/Projeto *</label>
+              <input type="text" id="company" name="company" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-mail *</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Telefone/WhatsApp *</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+
+            <div class="form-group">
+              <label for="business_type">Tipo de Empreendimento</label>
+              <select id="business_type" name="business_type">
+                <option value="">Selecione...</option>
+                <option value="industria">Indústria</option>
+                <option value="comercio">Comércio</option>
+                <option value="servicos">Serviços</option>
+                <option value="agropecuaria">Agropecuária</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Mensagem (opcional)</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Conte-nos mais sobre seu novo empreendimento..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn">
+              Solicitar Orçamento Gratuito
+            </button>
+
+            <div class="trust-indicators">
+              <span class="trust-indicator">🔒 Dados protegidos</span>
+              <span class="trust-indicator">⚡ Resposta em 24h</span>
+              <span class="trust-indicator">✓ Sem compromisso</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+      <h2 class="section-title">Por Que Licenciar com a Aram Ambiental?</h2>
+      <p class="section-subtitle">
+        Comece seu negócio com o pé direito. Evite problemas futuros e garanta a
+        conformidade desde o início.
+      </p>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">🎯</div>
+          <h3>Do Zero à Operação</h3>
+          <p>
+            Acompanhamos todo o processo de licenciamento, desde a análise de
+            viabilidade até a emissão da licença de operação.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">🛡️</div>
+          <h3>Evite Problemas Futuros</h3>
+          <p>
+            Licenciamento correto desde o início evita multas, embargos e dores
+            de cabeça com órgãos fiscalizadores.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">📚</div>
+          <h3>Orientação Completa</h3>
+          <p>
+            Não sabe por onde começar? Nossa equipe orienta você em cada etapa,
+            explicando todo o processo de forma clara.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">⚡</div>
+          <h3>Agilidade no Processo</h3>
+          <p>
+            Experiência e conhecimento técnico para acelerar a obtenção das
+            licenças e você começar a operar mais rápido.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">💼</div>
+          <h3>Todos os Segmentos</h3>
+          <p>
+            Atendemos indústrias, comércios, serviços, agropecuária e outros
+            segmentos que necessitam de licenciamento.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">🌍</div>
+          <h3>Expertise Local</h3>
+          <p>
+            Conhecimento profundo da legislação e dos procedimentos dos órgãos
+            ambientais de São Paulo e outros estados.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+      <h2 class="section-title">Como Funciona o Licenciamento Trifásico</h2>
+      <p class="section-subtitle">
+        O processo completo de licenciamento para sua nova empresa, passo a
+        passo.
+      </p>
+
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Licença Prévia (LP)</h3>
+            <p>
+              Primeira etapa que atesta a viabilidade ambiental do seu projeto.
+              Essencial antes de qualquer investimento em obras.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Licença de Instalação (LI)</h3>
+            <p>
+              Autoriza o início da construção ou instalação do empreendimento.
+              Necessária antes de começar as obras físicas.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Licença de Operação (LO)</h3>
+            <p>
+              Autoriza o funcionamento da sua empresa. Emitida após a conclusão
+              das obras e verificação do cumprimento das condicionantes.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Operação Regular</h3>
+            <p>
+              Sua empresa opera legalmente e em conformidade. Acompanhamos
+              também as renovações periódicas da licença de operação.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2>Pronto para Abrir sua Empresa?</h2>
+        <p>
+          Entre em contato agora e receba orientação especializada para o
+          licenciamento ambiental do seu novo negócio.
+        </p>
+
+        <div class="cta-buttons">
+          <a
+            href="#contactForm"
+            class="btn"
+            onclick="document.getElementById('name').focus(); return false;"
+            >Solicitar Orçamento</a
+          >
+          <a
+            href="https://wa.me/5516931850604?text=Olá!%20Preciso%20de%20licenciamento%20para%20nova%20empresa."
+            class="btn whatsapp-btn"
+            target="_blank"
+          >
+            💬 Falar no WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Aram Ambiental</h3>
+          <p>
+            Consultoria ambiental especializada em licenciamento, com 4 anos de
+            experiência e atendimento em todo o Brasil.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contato</h3>
+          <p>📞 (16) 3185-0604 / (16) 3185-0605</p>
+          <p>📧 leticia@aramambiental.com.br</p>
+          <p>📧 jullia@aramambiental.com.br</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Endereços</h3>
+          <p>
+            📍 Ribeirão Preto - SP<br />Rua Ercole Verri, 330, Vila Ana Maria
+          </p>
+          <p>📍 São Carlos - SP<br />Rua Dr. Carlos de Camargo Salles, 310</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Links Úteis</h3>
+          <a href="https://www.aramambiental.com.br">Site Institucional</a>
+          <a href="https://www.aramambiental.com.br/sobre">Sobre Nós</a>
+          <a href="https://www.aramambiental.com.br/blog">Blog</a>
+          <a href="https://www.aramambiental.com.br/contato">Contato</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 Aram Soluções Ambientais. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Form submission handler
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Get form data
+          const name = document.getElementById("name").value;
+          const company = document.getElementById("company").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+          const business_type = document.getElementById("business_type").value;
+          const message = document.getElementById("message").value;
+
+          // Get business type text
+          const businessSelect = document.getElementById("business_type");
+          const businessText =
+            businessSelect.options[businessSelect.selectedIndex].text;
+
+          // Format WhatsApp message
+          let whatsappMessage = `*SOLICITAÇÃO DE ORÇAMENTO*\n`;
+          whatsappMessage += `*Serviço:* Licenciamento para Novas Empresas\n\n`;
+          whatsappMessage += `*Nome:* ${name}\n`;
+          whatsappMessage += `*Empresa/Projeto:* ${company}\n`;
+          whatsappMessage += `*E-mail:* ${email}\n`;
+          whatsappMessage += `*Telefone:* ${phone}\n`;
+
+          if (business_type) {
+            whatsappMessage += `*Tipo de Empreendimento:* ${businessText}\n`;
+          }
+
+          if (message) {
+            whatsappMessage += `\n*Mensagem:*\n${message}`;
+          }
+
+          // WhatsApp number
+          const whatsappNumber = "551631850605";
+
+          // Encode message for URL
+          const encodedMessage = encodeURIComponent(whatsappMessage);
+
+          // Create WhatsApp URL
+          const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+          // Google Analytics event (if configured)
+          if (typeof gtag !== "undefined") {
+            gtag("event", "generate_lead", {
+              event_category: "Form",
+              event_label: "Licenciamento para Novas Empresas",
+              value: 1,
+            });
+          }
+
+          // Open WhatsApp
+          window.open(whatsappURL, "_blank");
+
+          // Reset form after a short delay
+          setTimeout(() => {
+            this.reset();
+          }, 1000);
+        });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (href !== "#") {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
